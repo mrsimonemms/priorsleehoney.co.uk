@@ -1,0 +1,3 @@
+home layout
+
+<slot />

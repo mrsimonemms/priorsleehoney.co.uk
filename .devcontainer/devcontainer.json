@@ -1,0 +1,20 @@
+{
+  "image": "ghcr.io/mrsimonemms/devcontainers/full",
+  "name": "devcontainer",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.makefile-tools",
+        "esbenp.prettier-vscode",
+        "svelte.svelte-vscode"
+      ],
+      "settings": {}
+    }
+  },
+  "containerEnv": {
+    "PUBLIC_DOMAIN_NAME": "http://localhost:5173",
+    "PUBLIC_TWITTER_USER": "@todo",
+    "VITE_HOST": "0.0.0.0"
+  }
+}
