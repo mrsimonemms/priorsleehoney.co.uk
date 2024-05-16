@@ -20,8 +20,7 @@
  */
 @use 'bulma/sass' with (
 	$body-overflow-y: auto,
-	$navbar-height: 4rem,
-	$navbar-item-img-max-height: 3rem
+	$navbar-item-img-max-height: 4rem
 );
 
 @use '@mdi/font/scss/materialdesignicons' with($mdi-font-path: '/fonts');

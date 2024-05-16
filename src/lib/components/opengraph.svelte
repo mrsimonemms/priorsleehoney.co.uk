@@ -6,7 +6,7 @@
 		PUBLIC_TWITTER_USER as twitterUser,
 	} from '$env/static/public';
 
-	const siteTitle = 'Site title';
+	const siteTitle = 'Priorslee Honey';
 
 	// @todo(sje): add in sensible defaults
 
