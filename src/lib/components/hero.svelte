@@ -5,9 +5,14 @@
 	export let subtitle: string | undefined = undefined;
 	export let img: string;
 	export let size: Content['imageSize'] = 'medium';
+	export let backgroundPosition = 'center center';
+	export let backgroundSize = 'cover';
 </script>
 
-<section class="hero is-{size}" style="background-image: url('{img}');">
+<section
+	class="hero is-{size}"
+	style="background-image: url('{img}'); background-position: {backgroundPosition}; background-size: {backgroundSize};"
+>
 	<div class="container">
 		<div class="hero-body">
 			<div class="has-background-black-ter is-inline-block p-5">
@@ -19,12 +24,3 @@
 		</div>
 	</div>
 </section>
-
-<style lang="scss">
-	.hero {
-		background: {
-			position: center center;
-			size: cover;
-		}
-	}
-</style>
