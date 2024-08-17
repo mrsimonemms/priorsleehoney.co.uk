@@ -10,7 +10,9 @@
     "vscode": {
       "extensions": [
         "ms-vscode.makefile-tools",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "astro-build.astro-vscode",
+        "unifiedjs.vscode-mdx"
       ],
       "settings": {}
     }
