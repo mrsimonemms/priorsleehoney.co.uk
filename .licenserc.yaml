@@ -11,6 +11,8 @@ header:
     - "go.*"
     - "**/*.{json,md,yml,yaml}"
     - "**/.gitkeep"
+    - "**/*.mdx"
+    - "**/*.astro"
   comment: on-failure
 
 dependency:

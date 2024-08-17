@@ -28,6 +28,7 @@ repos:
     rev: v1.1.1
     hooks:
       - id: markdown-toc
+        exclude: ^src
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.13.0
     hooks:

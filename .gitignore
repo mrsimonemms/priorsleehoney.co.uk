@@ -12,3 +12,6 @@ Thumbs.db
 
 coverage
 .nyc_output
+
+.astro
+env.d.ts

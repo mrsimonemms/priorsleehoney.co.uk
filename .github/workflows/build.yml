@@ -68,3 +68,19 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
