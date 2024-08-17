@@ -1,0 +1,18 @@
+---
+const { img, size = 'medium' } = Astro.props;
+---
+
+<section class=`hero is-${size}` style=`background-image: url('${img}');`>
+  <div class="hero-body">
+    <slot />
+  </div>
+</section>
+
+<style lang="scss">
+  .hero {
+    background: {
+      position: center center;
+      size: cover;
+    }
+  }
+</style>

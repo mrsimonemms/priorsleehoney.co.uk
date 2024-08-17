@@ -1,9 +1,15 @@
 ---
-import Default from '../layouts/Default.astro';
+import Hero from '../components/Hero.astro';
+import { SITE_DESCRIPTION } from '../consts';
+import DefaultLayout from '../layouts/Default.astro';
 ---
 
-<Default> hello world </Default>
-
-<span class="icon">
-  <i class="mdi mdi-home"></i>
-</span>
+<DefaultLayout>
+  <Hero title="bum" img="/img/img_6090.jpg" size="fullheight">
+    <div
+      class="is-align-items-center has-background-black-ter is-inline-block p-5"
+    >
+      <h1 class="title has-text-white-ter">{SITE_DESCRIPTION}</h1>
+    </div>
+  </Hero>
+</DefaultLayout>
