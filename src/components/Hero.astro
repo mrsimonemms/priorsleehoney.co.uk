@@ -1,4 +1,10 @@
 ---
+interface Props {
+  title: string;
+  size: 'medium' | 'large' | 'fullheight';
+  img: string;
+}
+
 const { img, size = 'medium' } = Astro.props;
 ---
 
