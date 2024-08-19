@@ -1,19 +1,195 @@
 ---
-import Hero from '../components/Hero.astro';
-import { SITE_DESCRIPTION } from '../consts';
+import CaptionedPhoto, {
+  type Props as Gallery,
+} from '../components/CaptionedPhoto.astro';
+import Section from '../components/Section.astro';
+import { ETSY_URL, SITE_DESCRIPTION } from '../consts';
 import DefaultLayout from '../layouts/Default.astro';
+
+const gallery: Gallery[] = [
+  {
+    src: 'bees-on-frame1.jpg',
+    alt: 'Bees on a frame',
+  },
+  {
+    src: 'queen2.jpg',
+    alt: 'Green marked queen',
+  },
+  {
+    src: 'brood1.jpg',
+    alt: 'Capped brood',
+  },
+  {
+    src: 'bees-on-frame2.jpg',
+    alt: 'Bees on a frame',
+  },
+  {
+    src: 'capped-honey1.jpg',
+    alt: 'Capped honey ready for extraction',
+  },
+  {
+    src: 'honey-jars.jpg',
+    alt: 'Jarred honey',
+  },
+];
+
+const hiveRequirements = [
+  {
+    text: 'Near good forage',
+    iconClass: 'has-text-success',
+    icon: 'flower',
+  },
+  {
+    text: 'Within about 20 minutes of Priorslee',
+    iconClass: 'has-text-danger',
+    icon: 'map-marker',
+  },
+  {
+    text: 'Space for multiple hives',
+    iconClass: 'has-text-warning',
+    icon: 'beehive-outline',
+  },
+  {
+    text: 'Nice people',
+    icon: 'human-greeting-variant',
+  },
+  {
+    text: 'Good access to the site',
+    icon: 'clock-outline',
+    iconClass: 'has-text-link',
+  },
+];
 ---
 
-<DefaultLayout>
-  <Hero
-    title="Small-scale honey producers in Shropshire"
-    img="/img/photos/simon.jpg"
-    size="fullheight"
-  >
-    <div
-      class="is-align-items-center has-background-black-ter is-inline-block p-5"
-    >
-      <h1 class="title has-text-white-ter">{SITE_DESCRIPTION}</h1>
+<DefaultLayout title={SITE_DESCRIPTION} description={SITE_DESCRIPTION}>
+  <Section id="about" title="About">
+    <div class="columns">
+      <div class="column is-one-quarter-desktop">
+        <figure class="image">
+          <img
+            src="/img/photos/img_1627.jpg"
+            alt="Simon in a bee suit in from of bee hives"
+          />
+        </figure>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <p>Hi, I'm Simon.</p>
+          <p>
+            My love of bees started when I was 8 when Mrs Norris brought some
+            bees into school to show them to her class. Although it took nearly
+            30 years to get into the position to become a beekeeper, this is the
+            culmination of a lifetime's ambition.
+          </p>
+
+          <p>
+            After moving to Shropshire in 2018, I did a beekeeping course with
+            the local beekeeper's association. In 2019, I got my first colony of
+            bees and kept them in the back garden at my home in Priorslee. Since
+            then, I've expanded my number of colonies of bees and apiary sites.
+          </p>
+
+          <p>
+            One of the things I love about beekeeping is that there is always
+            something to do. In the winter, it's time in the shed building and
+            repairing the equipment. During the summer, it's out with the bees.
+            It's certainly a nice change from my day job sitting behind a
+            computer.
+          </p>
+
+          <p>
+            I extract honey twice a year, in May and August. The spring honey is
+            usually very high in rapeseed which gives a light colour and a
+            delicate flavour. My favourite is the summer honey, which is much
+            darker and has a very floral taste. When extracting, I don't mix
+            between apiaries preserving the flavours. And, as I'm a small-scale
+            producer, the only thing I do to the honey is filter it.
+          </p>
+
+          <p>
+            Each year, my bees produce large quantities of wax. Most of the wax
+            I give back to the bees in the following year, but I also make
+            candles and other beeswax items. The candles are unscented which
+            gives a beautiful, sweet honeyed scent when burning.
+          </p>
+
+          <p class="has-text-centered">
+            <a
+              class="button is-medium is-warning"
+              href={ETSY_URL}
+              target="_blank"
+            >
+              Shop
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
-  </Hero>
+  </Section>
+
+  <Section id="gallery" title="Gallery">
+    <div class="fixed-grid has-3-cols has-1-cols-mobile">
+      <div class="grid">
+        {
+          gallery.map((img) => (
+            <div class="cell">
+              <CaptionedPhoto
+                src={`/img/photos/${img.src}`}
+                alt={img.alt}
+                content={img.alt}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+
+  <Section id="host-a-hive" title="Host a Hive">
+    <div class="content">
+      <p>
+        I'm always on the lookout for new apiary sites. There is no such thing
+        as a perfect apiary, but here are a few key things that make a good
+        place for an apiary.
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-4 is-offset-4">
+        <ul>
+          {
+            hiveRequirements.map((req) => (
+              <li class="is-flex is-align-items-center">
+                <span class="icon-text">
+                  <span class="icon is-large">
+                    <i
+                      class={`mdi mdi-36px mdi-${req.icon} ${req.iconClass ?? ''}`}
+                    />
+                  </span>
+                </span>
+                {req.text}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        Not all of these elements are required, but these are the things that
+        make an apiary site successful for me and my bees. If you think you have
+        a site that would work, please <a href="#contact">contact me.</a>
+      </p>
+    </div>
+  </Section>
+
+  <Section id="contact" title="Contact">
+    <div class="content has-text-centered">
+      <p>Please drop me a message</p>
+
+      <p>hello@priorsleehoney.co.uk</p>
+    </div>
+  </Section>
 </DefaultLayout>

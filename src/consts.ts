@@ -19,3 +19,5 @@
 
 export const SITE_TITLE = 'Priorslee Honey';
 export const SITE_DESCRIPTION = 'Small-scale honey producers in Shropshire';
+export const TWITTER_USER = 'PriorsleeHoney';
+export const ETSY_URL = 'https://priorsleehoney.etsy.com';

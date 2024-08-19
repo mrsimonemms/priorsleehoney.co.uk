@@ -1,0 +1,32 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE ,TWITTER_USER} from '../consts';
+
+const currentYear = new Date().getUTCFullYear();
+const copyrightYear = currentYear;
+
+const copyrightHolder = SITE_TITLE;
+const description = SITE_DESCRIPTION;
+---
+
+<footer class="footer has-background-black-ter has-text-white py-6">
+  <div class="container">
+    <div class="columns has-text-centered-touch">
+      <div class="column is-half">{description}</div>
+
+      <div class="column is-half has-text-right-desktop">
+        <a
+          href=`https://twitter.com/${TWITTER_USER}`
+          target="_blank"
+          class="icon has-text-white"
+        >
+          <i class="mdi mdi-24px mdi-twitter"></i>
+        </a>
+      </div>
+    </div>
+    <hr class="has-background-grey-dark" />
+    <p class="has-text-centered">
+      &copy; {copyrightYear}
+      {copyrightHolder} All rights reserved
+    </p>
+  </div>
+</footer>
