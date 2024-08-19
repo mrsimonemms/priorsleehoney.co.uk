@@ -1,0 +1,27 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  content?: string;
+}
+
+const { src, alt, content = null } = Astro.props;
+---
+
+<div class="card">
+  <div class="card-image">
+    <figure class="image">
+      <a href={src} target="_blank">
+        <img {src} {alt} title={alt} />
+      </a>
+    </figure>
+  </div>
+
+  {
+    content !== null && (
+      <div class="card-content">
+        <div class="content">{content}</div>
+      </div>
+    )
+  }
+</div>

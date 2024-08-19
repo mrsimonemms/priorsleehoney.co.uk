@@ -1,0 +1,17 @@
+---
+interface Props {
+  isAnchor?: boolean;
+  id: string;
+  title: string;
+}
+
+const { isAnchor = true, id, title } = Astro.props;
+---
+
+<section id={id} class={`section ${isAnchor ? 'anchor' : ''}`}>
+  <div class="container">
+    <h2 class="title">{title}</h2>
+
+    <slot />
+  </div>
+</section>

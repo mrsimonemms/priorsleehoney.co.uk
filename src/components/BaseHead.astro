@@ -1,4 +1,5 @@
 ---
+import { SITE_TITLE } from '../consts';
 import '../styles/styles.scss';
 
 interface Props {
@@ -10,6 +11,8 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, img = '/img/photos/simon.jpg' } = Astro.props;
+
+const pageTitle = `${SITE_TITLE} | ${title}`;
 ---
 
 <!-- Global Metadata -->
@@ -24,8 +27,8 @@ const { title, description, img = '/img/photos/simon.jpg' } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
 <meta name="description" content={description} />
 
 <link rel="sitemap" href="/sitemap-index.xml" />

@@ -12,6 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-@use 'bulma/sass';
+$navbar-height: 6em;
+@use 'bulma/sass' with (
+  $navbar-height: $navbar-height,
+  $navbar-item-img-max-height: 3rem
+);
 
 @import '@mdi/font/scss/materialdesignicons';
+
+.anchor {
+  padding: {
+    top: $navbar-height;
+  }
+}

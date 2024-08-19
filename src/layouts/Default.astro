@@ -1,14 +1,46 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Footer from '../components/Footer.astro';
+import Hero, { type Props as HeroProps } from '../components/Hero.astro';
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  img?: string;
+  heroSize?: HeroProps['size'];
+}
+
+const {
+  title = 'Unknown',
+  description = 'Unknown',
+  img = '/img/photos/simon.jpg',
+  heroSize = 'large',
+} = Astro.props;
 ---
 
 <!doctype html>
 <html>
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
-  <body>
-    <slot />
+  <body class="is-flex is-flex-direction-column" style="min-height: 100vh">
+    <Navbar />
+
+    <div class="is-flex-grow-1">
+      <Hero img={img} size={heroSize}>
+        <div
+          class="is-align-items-center has-background-black-ter is-inline-block p-5"
+        >
+          <h1 class="title has-text-white-ter">{description}</h1>
+        </div>
+      </Hero>
+
+      <div class="my-6">
+        <slot />
+      </div>
+    </div>
+
+    <Footer />
   </body>
 </html>

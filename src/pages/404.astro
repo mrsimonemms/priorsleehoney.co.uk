@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Hero from '../components/Hero.astro';
+import Navbar from '../components/Navbar.astro';
+
+const title = 'Page not found';
+---
+
+<!doctype html>
+<html>
+  <head>
+    <BaseHead title={title} description={title} />
+  </head>
+  <body>
+    <Hero img="/img/photos/bees-on-frame2.jpg" size="fullheight">
+      <div slot="head">
+        <Navbar />
+      </div>
+      <div
+        class="is-align-items-center has-background-black-ter is-inline-block p-5"
+      >
+        <h1 class="title has-text-white-ter">{title}</h1>
+      </div>
+    </Hero>
+  </body>
+</html>
