@@ -2,14 +2,13 @@
   "image": "ghcr.io/mrsimonemms/devcontainers/full",
   "name": "devcontainer",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/npm-package:1": {
+    "ghcr.io/devcontainers-extra/features/npm-packages:1": {
       "package": "astro"
     }
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.makefile-tools",
         "esbenp.prettier-vscode",
         "astro-build.astro-vscode",
         "unifiedjs.vscode-mdx"

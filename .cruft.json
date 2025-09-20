@@ -1,14 +1,15 @@
 {
   "template": "https://github.com/mrsimonemms/new",
-  "commit": "89bd11f1726436cbc857f868c839c4bc3bb9ca7e",
-  "checkout": "main",
+  "commit": "31026d30d7422cb70b7dc482b946e292a6e12434",
+  "checkout": null,
   "context": {
     "cookiecutter": {
       "project_name": "priorsleehoney.co.uk",
       "description": "Priorslee Honey website",
       "author": "Simon Emms <simon@simonemms.com>",
       "type": "blank",
-      "_template": "https://github.com/mrsimonemms/new"
+      "_template": "https://github.com/mrsimonemms/new",
+      "_commit": "31026d30d7422cb70b7dc482b946e292a6e12434"
     }
   },
   "directory": "js",
