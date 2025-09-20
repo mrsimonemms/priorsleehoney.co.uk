@@ -2,19 +2,22 @@ header:
   license:
     spdx-id: Apache-2.0
     copyright-owner: "Simon Emms <simon@simonemms.com>"
-    copyright-year: 2024
+    copyright-year: 2025
   paths-ignore:
-    - dist
-    - tmp
+    - "**/dist"
+    - "**/tmp"
     - LICENSE
-    - .*
-    - "go.*"
+    - "**/.*"
+    - "**/go.*"
     - "**/*.{json,md,yml,yaml}"
     - "**/.gitkeep"
-    - "**/*.mdx"
-    - "**/*.astro"
   comment: on-failure
+  language:
+    Go:
+      extensions:
+        - ".go"
+      comment_style_id: SlashAsterisk
 
 dependency:
   files:
-    - package.json # If this is a npm project.
+    - go.mod # If this is a Go project.

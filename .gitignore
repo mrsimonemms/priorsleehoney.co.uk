@@ -9,10 +9,15 @@ Thumbs.db
 .commit
 .devbox
 .envrc
+go.work.sum
 
-coverage
-.nyc_output
+######################
+## gRPC conventions ##
+######################
 
-.astro
-env.d.ts
-public/fonts
+# Go-generated files
+**/*.pb.go
+# TypeScript-generated gRPC files
+**/*/src/interfaces
+# Avoid duplication from Docker Compose volumes
+**/*/proto
